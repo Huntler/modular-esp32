@@ -4,104 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Modular ESP32 Framework</title>
-  <style>
-    :root {
-      --bg: #0f0f14;
-      --panel: #1b1b24;
-      --accent: #e11d48;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    header {
-      padding: 4rem 1.5rem;
-      text-align: center;
-      background: radial-gradient(circle at top, #2a0f1d, var(--bg));
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    header p {
-      max-width: 720px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 1.1rem;
-    }
-
-    section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      border-left: 4px solid var(--accent);
-      padding-left: 1rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: var(--panel);
-      padding: 1.5rem;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #fff;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    li { margin-bottom: 0.5rem; }
-
-    .badge {
-      display: inline-block;
-      background: rgba(225, 29, 72, 0.15);
-      color: var(--accent);
-      padding: 0.3rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      margin-right: 0.5rem;
-    }
-
-    footer {
-      padding: 2rem 1.5rem;
-      text-align: center;
-      color: var(--muted);
-      border-top: 1px solid #2a2a36;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover { text-decoration: underline; }
-  </style>
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 
@@ -116,15 +19,39 @@
 <section>
   <h2>Project Overview</h2>
   <div class="grid">
+    <div class="image-card">
+      <img src="images/MW-ESP-BASE.jpg">
+    </div>
+
     <div class="card">
-      <h3>Base System</h3>
+      <h3>Base Kit</h3>
       <p>
-        The core of the framework is a compact ESP32‑S3 DevKit enclosure providing power,
-        connectivity, and standardized expansion interfaces.
+          The core of the framework is a compact ESP32‑S3 DevKit enclosure providing power,
+          connectivity, and standardized expansion interfaces.
+          <br/>
+          <br/>
+          Print directly from 
+          <a href="https://makerworld.com/en/models/2139553-modular-esp32-case#profileId-2317582">Makerworld</a>.
       </p>
-      <span class="badge">ESP32‑S3</span>
-      <span class="badge">Modular</span>
-      <span class="badge">No Supports</span>
+        <span class="badge">Modular</span>
+        <span class="badge">FDM printing</span>
+    </div>
+
+    <div class="card">
+      <h3>Open Source</h3>
+      <p>
+        All mechanical designs and schematics are released as open source to encourage
+        community remixes and long‑term sustainability.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+<h2>Expansion System</h2>
+  <div class="grid">
+    <div class="image-card">
+      <img src="images/MW-ESP-SEN55.jpg">
     </div>
 
     <div class="card">
@@ -146,14 +73,22 @@
 </section>
 
 <section>
-  <h2>Smart Air Quality Monitor (SAQM) Module</h2>
+  <h2>Featuring: SAQM Module</h2>
   <div class="grid">
+    <div class="image-card">
+      <img src="images/MW-ESP-SEN55.jpg">
+    </div>
+
     <div class="card">
       <h3>Description</h3>
       <p>
         The SAQM module extends the base system with professional‑grade air quality sensing
         using the Sensirion SEN55 sensor. Designed for accurate airflow, low noise, and easy
         integration.
+        <br/>
+        <br/>
+        Print directly from 
+        <a href="https://makerworld.com/en/models/2139601-saqm-module-esp32#profileId-2317655">Makerworld</a>.
       </p>
     </div>
 
@@ -168,15 +103,6 @@
       </ul>
     </div>
 
-    <div class="card">
-      <h3>Design Goals</h3>
-      <ul>
-        <li>Optimized airflow path</li>
-        <li>Tool‑less assembly</li>
-        <li>No supports required</li>
-        <li>Consistent aesthetics with base system</li>
-      </ul>
-    </div>
   </div>
 </section>
 
@@ -184,13 +110,14 @@
   <h2>Technical Details</h2>
   <div class="grid">
     <div class="card">
-      <h3>Electronics</h3>
+      <h3>Electronics & Software</h3>
       <ul>
         <li>ESP32‑S3 DevKit</li>
-        <li>USB‑C power & programming</li>
-        <li>I²C / UART expansion headers</li>
+        <li>USB‑C power</li>
         <li>Modular internal wiring</li>
       </ul>
+        <span class="badge">Esphome</span>
+        <span class="badge">Solderless</span>
     </div>
 
     <div class="card">
@@ -204,11 +131,11 @@
     </div>
 
     <div class="card">
-      <h3>Mounting & Use</h3>
+      <h3>Bill of Materials</h3>
       <ul>
-        <li>Desktop or wall mountable</li>
-        <li>Stackable modules</li>
-        <li>Easy access to USB & connectors</li>
+        <li>Listed in every Makerworld project</li>
+        <li>All screws used are M3 standards</li>
+        <li>Most materials are easily accesible</li>
       </ul>
     </div>
   </div>
