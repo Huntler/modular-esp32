@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modular ESP32 Framework</title>
+  <style>
+    :root {
+      --bg: #0f0f14;
+      --panel: #1b1b24;
+      --accent: #e11d48;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 4rem 1.5rem;
+      text-align: center;
+      background: radial-gradient(circle at top, #2a0f1d, var(--bg));
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--panel);
+      padding: 1.5rem;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #fff;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li { margin-bottom: 0.5rem; }
+
+    .badge {
+      display: inline-block;
+      background: rgba(225, 29, 72, 0.15);
+      color: var(--accent);
+      padding: 0.3rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin-right: 0.5rem;
+    }
+
+    footer {
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid #2a2a36;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Modular ESP32‑S3 Framework</h1>
+  <p>
+    A fully modular, 3D‑printable enclosure and electronics ecosystem built around the ESP32‑S3.
+    Inspired by Gridfinity-style reusability, designed for rapid prototyping and long‑term projects.
+  </p>
+</header>
+
+<section>
+  <h2>Project Overview</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Base System</h3>
+      <p>
+        The core of the framework is a compact ESP32‑S3 DevKit enclosure providing power,
+        connectivity, and standardized expansion interfaces.
+      </p>
+      <span class="badge">ESP32‑S3</span>
+      <span class="badge">Modular</span>
+      <span class="badge">No Supports</span>
+    </div>
+
+    <div class="card">
+      <h3>Expansion Modules</h3>
+      <p>
+        Functional modules can be stacked or swapped without redesigning the base enclosure.
+        Sensors, displays, relays, and custom electronics can all share the same ecosystem.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Open Source</h3>
+      <p>
+        All mechanical designs and schematics are released as open source to encourage
+        community remixes and long‑term sustainability.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Smart Air Quality Monitor (SAQM) Module</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Description</h3>
+      <p>
+        The SAQM module extends the base system with professional‑grade air quality sensing
+        using the Sensirion SEN55 sensor. Designed for accurate airflow, low noise, and easy
+        integration.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Measured Parameters</h3>
+      <ul>
+        <li>PM1.0 / PM2.5 / PM4 / PM10</li>
+        <li>Temperature</li>
+        <li>Humidity</li>
+        <li>VOC Index</li>
+        <li>NOx Index</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Design Goals</h3>
+      <ul>
+        <li>Optimized airflow path</li>
+        <li>Tool‑less assembly</li>
+        <li>No supports required</li>
+        <li>Consistent aesthetics with base system</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Technical Details</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Electronics</h3>
+      <ul>
+        <li>ESP32‑S3 DevKit</li>
+        <li>USB‑C power & programming</li>
+        <li>I²C / UART expansion headers</li>
+        <li>Modular internal wiring</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>3D Printing</h3>
+      <ul>
+        <li>Material: PLA / PETG</li>
+        <li>Layer height: 0.2 mm recommended</li>
+        <li>No supports required</li>
+        <li>Optimized for FDM printers</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Mounting & Use</h3>
+      <ul>
+        <li>Desktop or wall mountable</li>
+        <li>Stackable modules</li>
+        <li>Easy access to USB & connectors</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Get Involved</h2>
+  <div class="card">
+    <p>
+      This project is actively evolving. Feedback, remixes, and new module ideas are highly
+      encouraged. If you build something with it, share your make and help grow the ecosystem.
+    </p>
+    <p>
+      ▶ Models available on <strong>MakerWorld</strong><br />
+      ▶ Source files and documentation hosted on <strong>GitHub</strong>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Modular ESP32 Framework · Open‑Source Hardware</p>
+</footer>
+
+</body>
+</html>
