@@ -47,13 +47,17 @@ h2 {
     padding-left: 1rem;
 }
 
+
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 320px);
+  gap: 1.5rem;
+  justify-content: center;
 }
 
 .card {
+    max-width: 340px;
+    width: 100%;
     background: var(--panel);
     padding: 1.5rem;
     border-radius: 14px;
@@ -66,15 +70,33 @@ h2 {
 }
 
 .image-card {
+    max-width: 340px;
+    width: 100%;
     padding: 0;
     overflow: hidden;
     border-radius: 14px;
+    background: var(--panel);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   }
 
 .image-card img {
     width: 100%;
     display: block;
-    border-radius: 14px;
+    border-radius: 0px;
+}
+
+.image-card div {
+    padding: 1.5rem;
+}
+
+@media (max-width: 360px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    max-width: none;
+  }
 }
 
 ul {
